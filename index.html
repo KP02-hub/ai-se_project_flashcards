@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Keith Perkins" />
+    <meta
+      name="description"
+      content="A flashcard app for studying and reviewing topics."
+    />
+    <meta name="keywords" content="flashcard, study aids, learning materials" />
+    <title>Flash Cards</title>
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./assets/vendor/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="header__title">
+        <a class="header__link" href="#home">Flash Cards</a>
+      </h1>
+      <nav class="nav">
+        <ul class="nav__links">
+          <li>
+            <a class="nav__link" href="#home">My Decks</a>
+          </li>
+          <li>
+            <a class="nav__link" href="#about">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page__main-content">
+      <section class="decks" id="home">
+        <h2 class="decks__title">My Decks</h2>
+        <div class="decks__row">
+          <ul class="decks__list"></ul>
+          <button type="button" class="decks__new-deck-btn">+ New Deck</button>
+        </div>
+      </section>
+      <section class="carousel" id="carousel" hidden>
+        <h2 class="carousel__title"></h2>
+        <div class="carousel__row">
+          <button type="button" class="carousel__btn carousel__btn_type_left" aria-label="Previous card"></button>
+          <div class="carousel__card"><p class="carousel__card-text"></p></div>
+          <button type="button" class="carousel__btn carousel__btn_type_right" aria-label="Next card"></button>
+        </div>
+        <button type="button" class="carousel__btn carousel__btn_type_flip" aria-label="Flip card"></button>
+      </section>
+      <section class="not-found" id="not-found" hidden>
+        <h2>404 Not Found</h2>
+        <p>We couldn't find that page. <a href="#home">Back to My Decks</a></p>
+      </section>
+      <template id="deck-template">
+        <li class="deck deck_color_green">
+          <a class="deck__link" href="#" aria-label="Open deck"></a>
+          <h3 class="deck__title"></h3>
+          <div class="deck__row">
+            <p class="deck__count"></p>
+            <button type="button" class="deck__delete-btn" aria-label="Delete deck"></button>
+          </div>
+        </li>
+      </template>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">&copy; 2026 Keith Perkins</p>
+    </footer>
+    <script type="module" src="./assets/js/index.js"></script>
+  </body>
+</html>
