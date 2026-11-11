@@ -34,3 +34,7 @@ Visit http://localhost:8000/ in your browser. A current browser and Python 3 are
 - `assets/js/index.js` renders decks and handles navigation.
 - `assets/js/carousel.js` handles the carousel.
 - `assets/js/decks.js` contains the sample deck data.
+
+## Deployed site
+
+[Open the Flashcard App](https://kp02-hub.github.io/ai-se_project_flashcards/)
