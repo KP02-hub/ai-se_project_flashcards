@@ -1,0 +1,55 @@
+.decks__title {
+  margin-top: 0;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.decks__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.decks__list {
+  display: contents;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.decks__new-deck-btn {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 325px;
+  height: 205px;
+  display: flex;
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #d9d9d9;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a80;
+  cursor: pointer;
+}
+
+.decks__new-deck-btn:hover {
+  background-color: #c5c5c5;
+  color: #1a1a1a;
+}
+
+.decks__practice {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #222;
+  color: white;
+  text-decoration: none;
+}
+
+.decks__practice:hover {
+  background-image: linear-gradient(120deg, #888, #555);
+  background-blend-mode: overlay;
+}

@@ -38,6 +38,23 @@
           <button type="button" class="decks__new-deck-btn">+ New Deck</button>
         </div>
       </section>
+      <section id="open-deck" class="decks" hidden>
+        <h2 class="decks__title"></h2>
+        <a class="decks__practice" href="#home">Practice</a>
+        <div class="decks__row">
+          <ul class="decks__list"></ul>
+          <button type="button" class="decks__new-deck-btn">+ New Card</button>
+        </div>
+      </section>
+      <template id="flashcard-template">
+        <li class="deck">
+          <h3 class="deck__title"></h3>
+          <div class="deck__row">
+            <button type="button" class="deck__flip" aria-label="Flip card"></button>
+            <button type="button" class="deck__delete-btn" aria-label="Delete card"></button>
+          </div>
+        </li>
+      </template>
       <section class="carousel" id="carousel" hidden>
         <h2 class="carousel__title"></h2>
         <div class="carousel__row">

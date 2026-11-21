@@ -1,3 +1,4 @@
+import { renderDeckView } from "./deck-view.js";
 import { decks, getDeckByID } from "./decks.js";
 import { hexToString } from "./colors.js";
 import { renderCarouselView } from "./carousel.js";
@@ -5,6 +6,7 @@ import { renderCarouselView } from "./carousel.js";
 const deckTemplate = document.querySelector("#deck-template");
 const deckList = document.querySelector(".decks__list");
 const homeSection = document.querySelector("#home");
+const openDeckSection = document.querySelector("#open-deck");
 const carouselSection = document.querySelector("#carousel");
 const notFoundSection = document.querySelector("#not-found");
 const mainContent = document.querySelector(".page__main-content");
@@ -19,7 +21,7 @@ function createDeckEl(deckData) {
     deckEl.classList.add(`deck_color_${color}`);
   }
   const link = deckEl.querySelector(".deck__link");
-  link.href = `#carousel/${deckData.id}`;
+  link.href = `#deck/${deckData.id}`;
   link.setAttribute("aria-label", `Open ${deckData.name}`);
   const deleteButton = deckEl.querySelector(".deck__delete-btn");
   deleteButton.setAttribute("aria-label", `Delete ${deckData.name} deck`);
@@ -35,6 +37,7 @@ decks.forEach(renderDeckEl);
 
 function router() {
   const hash = window.location.hash.slice(1) || "home";
+  openDeckSection.hidden = true;
   homeSection.hidden = true;
   carouselSection.hidden = true;
   notFoundSection.hidden = true;
@@ -42,6 +45,14 @@ function router() {
 
   if (hash === "home") {
     homeSection.hidden = false;
+  } else if (hash.startsWith("deck/")) {
+    const deck = getDeckByID(hash.slice(5));
+    if (deck) {
+      openDeckSection.hidden = false;
+      renderDeckView(deck);
+    } else {
+      notFoundSection.hidden = false;
+    }
   } else if (hash.startsWith("carousel/")) {
     const deckID = hash.split("/")[1];
     const deck = getDeckByID(deckID);
