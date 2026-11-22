@@ -40,9 +40,10 @@
 }
 
 .decks__practice {
-  display: inline-block;
+  display: block;
+  width: fit-content;
   padding: 12px 24px;
-  margin-bottom: 20px;
+  margin: 0 0 20px auto;
   border-radius: 8px;
   background-color: #222;
   color: white;
@@ -62,6 +63,7 @@
   width: 100%;
   height: auto;
   aspect-ratio: 325 / 205;
+  max-width: 353px;
 }
 @media (max-width: 600px) {
   .decks__title { font-size: 30px; }
