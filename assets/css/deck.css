@@ -91,3 +91,5 @@
 .deck__flip:hover {
   opacity: 1;
 }
+
+.deck { box-shadow: var(--card-shadow); overflow-wrap: anywhere; }

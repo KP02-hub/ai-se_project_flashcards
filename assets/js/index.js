@@ -41,6 +41,7 @@ function router() {
   homeSection.hidden = true;
   carouselSection.hidden = true;
   notFoundSection.hidden = true;
+  document.body.classList.remove("page_no-mobile-bar");
   mainContent.classList.remove("page__main-content_location_carousel");
 
   if (hash === "home") {
@@ -58,6 +59,7 @@ function router() {
     const deck = getDeckByID(deckID);
     if (deck) {
       carouselSection.hidden = false;
+      document.body.classList.add("page_no-mobile-bar");
       mainContent.classList.add("page__main-content_location_carousel");
       renderCarouselView(deck);
     } else {
@@ -66,6 +68,7 @@ function router() {
   } else {
     notFoundSection.hidden = false;
   }
+  if (!notFoundSection.hidden) document.body.classList.add("page_no-mobile-bar");
 }
 
 window.addEventListener("hashchange", router);

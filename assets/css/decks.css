@@ -53,3 +53,16 @@
   background-image: linear-gradient(120deg, #888, #555);
   background-blend-mode: overlay;
 }
+
+.decks__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+.decks__new-deck-btn, .decks__row .deck {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 325 / 205;
+}
+@media (max-width: 600px) {
+  .decks__title { font-size: 30px; }
+}

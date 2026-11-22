@@ -21,3 +21,11 @@
 .page__main-content_location_carousel {
   margin-top: 106px;
 }
+
+.page {
+  --card-shadow: 0 2px 8px #0000001a, -1px 2px 2px #ffffffb2 inset, 1px -1px 2px #00000040 inset;
+}
+@media (max-width: 805px) {
+  .page { padding: 20px; }
+  .page__main-content { margin-top: 40px; }
+}

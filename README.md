@@ -1,6 +1,6 @@
 # Flashcard App
 
-A study app built during TripleTen's AI Software Engineering program. It displays a collection of flashcard decks and lets you open a deck to review its cards in a carousel.
+A study app built during TripleTen's AI Software Engineering program. It displays a collection of flashcard decks and lets you open a deck, flip individual cards, and practice in a carousel.
 
 ## Features
 
@@ -10,6 +10,12 @@ A study app built during TripleTen's AI Software Engineering program. It display
 - Navigate between the deck list and carousel using URL hashes. Unknown routes show a 404 message.
 
 The New Deck button is present in the interface but does not create a deck yet. Removing a deck affects the current page only.
+
+The home and open-deck views use a responsive grid. On smaller screens the main actions stay within reach, and the practice controls move below the card.
+
+## Project Pitch Video
+
+[Watch the Flash Cards project pitch](https://drive.google.com/file/d/1ViwVXOO-UcHb1H_sXVqMW6w4IJRMRVG8/view)
 
 ## Technologies used
 

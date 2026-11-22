@@ -11,7 +11,7 @@
   color: #1a1a1a80;
 }
 
-.carousel__row {
+.carousel__grid {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -101,3 +101,27 @@
 .carousel__card_color_orange { background-color: #ee955e; }
 
 .carousel__card_color_yellow { background-color: #f5d770; }
+
+.carousel__grid {
+  display: grid;
+  grid-template-areas: "prev card next" ". flip .";
+  justify-items: center;
+  align-items: center;
+  max-width: 100%;
+}
+.carousel__card { grid-area: card; width: min(440px, 100%); }
+.carousel__card, .carousel__btn { box-shadow: var(--card-shadow); }
+.carousel__btn_type_left { grid-area: prev; }
+.carousel__btn_type_right { grid-area: next; }
+.carousel__btn_type_flip { grid-area: flip; margin: 0; }
+@media (max-width: 650px) {
+  .carousel__grid {
+    width: min(100%, 440px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "card card card" "prev flip next";
+  }
+  .carousel__card { height: auto; aspect-ratio: 440 / 300; }
+  .carousel__card-text { font-size: clamp(20px, 6vw, 32px); }
+  .carousel__btn_type_left { justify-self: start; }
+  .carousel__btn_type_right { justify-self: end; }
+}
