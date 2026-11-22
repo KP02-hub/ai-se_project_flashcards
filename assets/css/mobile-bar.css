@@ -31,15 +31,13 @@
     justify-content: center;
     padding: 14px 8px;
     margin: 0;
-    background: #222;
-    color: #fff;
     font-size: 18px;
     font-weight: 500;
   }
   #open-deck .decks__new-deck-btn, .decks__practice {
-    width: min(calc(50% - 26px), 170px);
+    width: min(calc(50% - 32px), 170px);
     transform: none;
   }
-  #open-deck .decks__new-deck-btn { left: calc(50% + 6px); }
-  .decks__practice { left: auto; right: calc(50% + 6px); }
+  #open-deck .decks__new-deck-btn { left: auto; right: calc(50% + 12px); }
+  .decks__practice { left: calc(50% + 12px); }
 }
