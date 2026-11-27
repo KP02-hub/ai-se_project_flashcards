@@ -1,0 +1,68 @@
+.new-deck-view__form {
+  display: grid;
+  gap: 24px;
+  max-width: 640px;
+}
+
+.color-picker {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.color-picker legend {
+  margin-bottom: 12px;
+}
+
+.color-picker input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.color-picker label {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background: var(--swatch);
+  cursor: pointer;
+}
+
+.color-picker input:checked + label {
+  border-color: #222;
+}
+
+.color-picker label:hover {
+  box-shadow: 0 0 0 2px #888;
+}
+
+.color-picker input:focus-visible + label {
+  outline: 3px solid #184dab;
+  outline-offset: 3px;
+}
+
+.new-deck-view__field {
+  display: grid;
+  gap: 12px;
+}
+
+.new-deck-view textarea {
+  padding: 16px;
+  border: 1px solid #888;
+  border-radius: 8px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.new-deck-view button:disabled {
+  justify-self: start;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 8px;
+  background: #d9d9d9;
+  color: #626262;
+  cursor: not-allowed;
+}

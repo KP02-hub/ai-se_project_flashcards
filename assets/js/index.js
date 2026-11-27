@@ -6,6 +6,7 @@ import { renderCarouselView } from "./carousel.js";
 const deckTemplate = document.querySelector("#deck-template");
 const deckList = document.querySelector(".decks__list");
 const homeSection = document.querySelector("#home");
+const newDeckSection = document.querySelector("#new-deck-view");
 const openDeckSection = document.querySelector("#open-deck");
 const carouselSection = document.querySelector("#carousel");
 const notFoundSection = document.querySelector("#not-found");
@@ -37,6 +38,7 @@ decks.forEach(renderDeckEl);
 
 function router() {
   const hash = window.location.hash.slice(1) || "home";
+  newDeckSection.hidden = true;
   openDeckSection.hidden = true;
   homeSection.hidden = true;
   carouselSection.hidden = true;
@@ -46,6 +48,8 @@ function router() {
 
   if (hash === "home") {
     homeSection.hidden = false;
+  } else if (hash === "new-deck" || hash === "new-deck-view") {
+    newDeckSection.hidden = false;
   } else if (hash.startsWith("deck/")) {
     const deck = getDeckByID(hash.slice(5));
     if (deck) {
@@ -70,6 +74,10 @@ function router() {
   }
   if (!notFoundSection.hidden) document.body.classList.add("page_no-mobile-bar");
 }
+
+document.querySelector("#home .gallery__new-card-btn").addEventListener("click", () => {
+  window.location.hash = "new-deck";
+});
 
 window.addEventListener("hashchange", router);
 router();

@@ -35,8 +35,32 @@
         <h2 class="decks__title">My Decks</h2>
         <div class="decks__row">
           <ul class="decks__list"></ul>
-          <button type="button" class="decks__new-deck-btn">+ New Deck</button>
+          <button type="button" class="decks__new-deck-btn gallery__new-card-btn">+ New Deck</button>
         </div>
+      </section>
+      <section class="new-deck-view" id="new-deck-view" hidden>
+        <h2 class="decks__title">New Deck</h2>
+        <form class="new-deck-view__form" id="new-deck-form">
+          <fieldset class="color-picker">
+            <legend>Deck color</legend>
+            <input type="radio" name="color" id="green" value="#64d583" aria-label="green" checked />
+            <label for="green" style="--swatch: #64d583"></label>
+            <input type="radio" name="color" id="blue" value="#91a8f9" aria-label="blue" />
+            <label for="blue" style="--swatch: #91a8f9"></label>
+            <input type="radio" name="color" id="orange" value="#ee955e" aria-label="orange" />
+            <label for="orange" style="--swatch: #ee955e"></label>
+            <input type="radio" name="color" id="pink" value="#ee92d7" aria-label="pink" />
+            <label for="pink" style="--swatch: #ee92d7"></label>
+            <input type="radio" name="color" id="purple" value="#aa8ef0" aria-label="purple" />
+            <label for="purple" style="--swatch: #aa8ef0"></label>
+            <input type="radio" name="color" id="yellow" value="#f5d770" aria-label="yellow" />
+            <label for="yellow" style="--swatch: #f5d770"></label>
+          </fieldset>
+          <label class="new-deck-view__field">Deck JSON
+            <textarea name="json" rows="9" placeholder="Paste your deck JSON here"></textarea>
+          </label>
+          <button type="submit" disabled>Create Deck</button>
+        </form>
       </section>
       <section id="open-deck" class="decks" hidden>
         <h2 class="decks__title"></h2>
